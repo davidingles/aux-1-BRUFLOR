@@ -6,31 +6,79 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Dav(props) {
-  const { nodes, materials } = useGLTF("/3D MOLA.gltf");
+  const { nodes, materials } = useGLTF("/6D FLORAL BRUFLOR.gltf");
   return (
     <group {...props} dispose={null}>
-      <group position={[0, 0.16, 0]} rotation={[-Math.PI / 2, Math.PI / 2, 0]}>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plano001.geometry}
+        material={materials["Material.001"]}
+        position={[0.26, 0.21, 0.06]}
+        rotation={[Math.PI, 0, Math.PI]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plano002.geometry}
+        material={materials["Material.001"]}
+        position={[0.26, 0.21, 0.06]}
+        rotation={[Math.PI, 0, Math.PI]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plano003.geometry}
+        material={materials["Material.001"]}
+        position={[-0.26, 0.21, 0.06]}
+        rotation={[Math.PI, 0, Math.PI]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Texto.geometry}
+        material={materials["Material.001"]}
+        position={[0.04, 0, -0.27]}
+        rotation={[Math.PI / 2, 0, Math.PI]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Texto001.geometry}
+        material={materials["Material.001"]}
+        position={[0.62, 0, 0]}
+        rotation={[Math.PI / 2, 0, Math.PI]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Texto002.geometry}
+        material={materials["Material.001"]}
+        position={[-0.46, 0.07, -0.25]}
+        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+      />
+      <group position={[0, 0.11, -0.05]} rotation={[Math.PI / 2, 0, 0]}>
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes["TQ_ARD-geom"].geometry}
-          material={materials.TQ_ARD_front}
+          geometry={nodes["tq4_ARD-geom001"].geometry}
+          material={materials["tq4_ARD_front.001"]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes["TQ_ARD-geom_1"].geometry}
-          material={materials.TQ_ARD_back}
+          geometry={nodes["tq4_ARD-geom001_1"].geometry}
+          material={materials["tq4_ARD_back.001"]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes["TQ_ARD-geom_2"].geometry}
-          material={materials.TQ_ARD_edge}
+          geometry={nodes["tq4_ARD-geom001_2"].geometry}
+          material={materials["tq4_ARD_edge.001"]}
         />
       </group>
     </group>
   );
 }
 
-useGLTF.preload("/3D MOLA.gltf");
+useGLTF.preload("/6D FLORAL BRUFLOR.gltf");
